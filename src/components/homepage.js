@@ -23,8 +23,14 @@ function Homepage(props) {
         <div>
             
             
-            <div> <Button type="submit" onClick={() => navigate('/favorites')}>Liked images</Button></div>
             <div>{data.name}</div>
+            <div> <Button type="submit" onClick={() => navigate('/favorites')}>Modal</Button></div>
+            <div> <Button type="submit" onClick={() => navigate('/books')}>books</Button></div>
+            <div> <Button type="submit" onClick={() => navigate('/characters')}>characters</Button></div>
+            <div> <Button type="submit" onClick={() => navigate('/houses')}>houses</Button></div>
+
+
+
             
        </div> 
     );

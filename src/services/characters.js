@@ -2,5 +2,5 @@ import axios from 'axios';
 
 export const getCharacter = () =>
   axios.get(
-      "https://anapioficeandfire.com/api/characters/583"
+    "www.themealdb.com/api/json/v1/1/lookup.php?i=52772"
     ).then((res) => res.data)

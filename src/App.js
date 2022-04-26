@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useCallback, Fragment } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Homepage from "./components/homepage";
-import Likedimages from "./components/likedimages";
-import Books from "./components/books";
-import Characters from "./components/characters";
-import Houses from "./components/houses";
+import Homepage from "./components/Homepage";
+import Books from "./components/Books";
+import Characters from "./components/Characters";
+import Houses from "./components/Houses";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
 
@@ -20,9 +19,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Homepage/>} />
-        <Route path="/favorites" element={<Likedimages/>}/>
         <Route path="/books" element={<Books/>}/>
-        <Route path="/characetrs" element={<Characters/>}/>
+        <Route path="/characters" element={<Characters/>}/>
         <Route path="/houses" element={<Houses/>}/>
       </Routes>
     </BrowserRouter>

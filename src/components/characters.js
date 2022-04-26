@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { getCharacter } from '../services/characters';
+import CharacterContainer from './CharacterContainer'
 
 
 function Characters(props) {
@@ -11,7 +12,8 @@ function Characters(props) {
 
     return (
 
-     <div>{charName.name}</div>
+        <div>{charName.map((character) => (
+            <CharacterContainer character={character} />))}</div>
     );
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import { getBook } from '../services/books';
+import  BookContainer from './BookContainer'
 
 
 
@@ -9,8 +10,9 @@ function Books(props) {
 
 
     return (
-     <div>{bookName.name}</div>
+     <div>{bookName.map((book) => (
+        <BookContainer book={book} />))}</div>
     );
-}
+};
 
 export default Books;

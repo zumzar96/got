@@ -2,5 +2,5 @@ import axios from 'axios';
 
 export const getBook = () =>
   axios.get(
-      "https://anapioficeandfire.com/api/characters/583"
+    "https://www.anapioficeandfire.com/api/books"
     ).then((res) => res.data)

@@ -28,6 +28,12 @@ function Homepage(props) {
           houses
         </Button>
       </div>
+      <div>
+        {" "}
+        <Button type="submit" onClick={() => navigate("/login")}>
+          login
+        </Button>
+      </div>
     </div>
   );
 }

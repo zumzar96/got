@@ -7,7 +7,7 @@ import HouseContainer from './HouseContainer';
 
 
 function Houses(props) {
-    const { data : houseName = [], } = useQuery("getCharacter", () => getHouse());
+    const { data : houseName = [], } = useQuery("getHouse", () => getHouse());
     return (
     <div>
     <div>{houseName.map((house) => (

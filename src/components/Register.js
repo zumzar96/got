@@ -3,15 +3,17 @@ import { Form, Button } from 'react-bootstrap';
 import { useMutation } from "react-query";
 import { signup } from "../services/user";
 import { useRef } from "react";
+import { Container } from "react-bootstrap";
 
 
-const Login = () => {
+const Register = () => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
 
   const mutation = useMutation((info) => signup(info))
 
   return (
+    <Container>
     <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
@@ -33,10 +35,11 @@ const Login = () => {
                mutation.mutate({ email: emailInputRef.current.value, password: passwordInputRef.current.value })
              }}
            >
-             Create Todo
+             Signup
            </Button>
     </Form>
+    </Container>
   );
 };
 
-export default Login;
+export default Register;

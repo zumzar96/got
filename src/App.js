@@ -4,7 +4,8 @@ import Homepage from "./components/Homepage";
 import Books from "./components/Books";
 import Characters from "./components/Characters";
 import Houses from "./components/Houses";
-import Login from "./components/Register"
+import Login from "./components/Login"
+import Register from "./components/Register"
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
 
@@ -24,6 +25,8 @@ function App() {
         <Route path="/characters" element={<Characters/>}/>
         <Route path="/houses" element={<Houses/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/register" element={<Register/>}/>
+
 
       </Routes>
     </BrowserRouter>

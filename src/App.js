@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback, Fragment } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Homepage from "./components/Homepage";
-import Books from "./components/Books";
-import Characters from "./components/Characters";
-import Houses from "./components/Houses";
-import Login from "./components/Login"
-import Register from "./components/Register"
+import Homepage from "./pages/Homepage";
+import Books from "./pages/Books";
+import Characters from "./pages/Characters";
+import Houses from "./pages/Houses";
+import Login from "./pages/Login"
+import Register from "./pages/Register"
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
 
@@ -16,7 +16,6 @@ function App() {
 
 
   return (
-    
     <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <Routes>

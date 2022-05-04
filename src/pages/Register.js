@@ -4,17 +4,21 @@ import { useMutation } from "react-query";
 import { signup } from "../services/user";
 import { useRef } from "react";
 import { Container } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 
 const Register = () => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
+  const navigate = useNavigate();
 
   const mutation = useMutation((info) => signup(info))
 
   return (
-    <Container>
-    <Form>
+
+    <Container className="p-3">
+      <Container className="p-5 mb-4 bg-light rounded-3">
+     <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" placeholder="Enter email" ref={emailInputRef}/>
@@ -38,6 +42,8 @@ const Register = () => {
              Signup
            </Button>
     </Form>
+    <Button type="submit" onClick={() => navigate("/")}>home</Button>
+    </Container>
     </Container>
   );
 };

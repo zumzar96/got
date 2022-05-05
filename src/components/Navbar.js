@@ -5,7 +5,7 @@ const NavB = () => {
   return (
     <Nav fill variant="tabs" defaultActiveKey="/">
       <Nav.Item>
-        <Nav.Link href="/home">Home</Nav.Link>
+        <Nav.Link href="/">Home</Nav.Link>
       </Nav.Item>
       <Nav.Item>
         <Nav.Link href="books">books</Nav.Link>

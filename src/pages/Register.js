@@ -1,51 +1,92 @@
-import React from "react";
-import { Form, Button } from 'react-bootstrap';
+import React, { Fragment } from "react";
+import { Form, Button, Alert, Col, Row} from "react-bootstrap";
 import { useMutation } from "react-query";
 import { signup } from "../services/user";
 import { useRef } from "react";
 import { Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import NavB from "../components/Navbar"
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+
+const schema = yup.object({
+  email: yup.string().required(),
+  password: yup.string().min(8).max(32).required(),
+}).required();
 
 
-const Register = () => {
+
+const Login = () => {
+  const navigate = useNavigate();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
-  const navigate = useNavigate();
 
-  const mutation = useMutation((info) => signup(info))
+  const { register, handleSubmit, formState:{ errors } } = useForm({
+    resolver: yupResolver(schema)
+  });
+
+  const mutation = useMutation((info) => signup(info));
+
+
+  const onSubmitHandler = () => {
+    mutation.mutate({
+      email: emailInputRef.current.value,
+      password: passwordInputRef.current.value,
+    });
+    }
+  
+
 
   return (
-
+    <Fragment>
+      <div><NavB></NavB></div>
     <Container className="p-3">
       <Container className="p-5 mb-4 bg-light rounded-3">
-     <Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" ref={emailInputRef}/>
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" ref={passwordInputRef} />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-      <Button
-             onClick={() => {
-               mutation.mutate({ email: emailInputRef.current.value, password: passwordInputRef.current.value })
-             }}
-           >
-             Signup
-           </Button>
-    </Form>
-    <Button type="submit" onClick={() => navigate("/")}>home</Button>
+        <Form onSubmit={onSubmitHandler}>
+          <Row>
+          <Col>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              {...register("email")} placeholder="email" type="email" required
+              ref={emailInputRef}
+            />
+            <Form.Text className="text-muted">
+            {errors.email?.message}
+            </Form.Text>
+          </Form.Group>
+          </Col>
+          <Col>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              {...register("password")}
+              placeholder="password"
+              type="password"
+              required
+              ref={passwordInputRef}
+            />
+            <Form.Text className="text-muted">
+            {errors.password?.message}
+            </Form.Text>
+          </Form.Group>
+          </Col>
+          </Row>
+          <Button
+            type='submit'
+          >
+            Signup
+          </Button>
+          <Alert key={"light"} variant={"light"}>
+            If u dont have an account
+          </Alert>
+        </Form>
+      </Container>
     </Container>
-    </Container>
+    </Fragment>
+    
   );
 };
 
-export default Register;
+export default Login;

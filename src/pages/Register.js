@@ -12,21 +12,30 @@ import * as Yup from "yup";
 
 const Register = () => {
   const navigate = useNavigate();
-  const emailInputRef = useRef("");
-  const passwordInputRef = useRef("");
+  const [email, setEmail] = useState('')
+  const [password, setPassword]= useState('')
+  
+
+  const formSchema = Yup.object().shape({
+    email: Yup.string(),
+    password: Yup.string(),
+      
+  });
 
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm({});
+  } = useForm({
+    resolver: yupResolver(formSchema)
+  });
 
-  const mutation = useMutation((info) => signup(info));
+  const mutation = useMutation((info) => signup(info), {onSuccess: () => navigate("/Login")});
 
   const onSubmitHandler = () => {
     mutation.mutate({
-      Email: emailInputRef.current.value,
-      Password: passwordInputRef.current.value,
+      email: email,
+      password: password,
     });
   };
 
@@ -50,7 +59,8 @@ const Register = () => {
                     placeholder="email"
                     type="email"
                     required
-                    ref={emailInputRef}
+                    name='email'
+                    onChange={(event) => setEmail(event.target.value)}
                   />
                   <Form.Text className="text-muted">
                     {errors.email?.message}
@@ -67,7 +77,8 @@ const Register = () => {
                     required
                     minLength={8}
                     maxLength={20}
-                    ref={passwordInputRef}
+                    name="password"
+                    onChange={(event) => setPassword(event.target.value)}
                   />
                   <Form.Text className="text-muted">
                     {errors.password?.message}
@@ -75,7 +86,7 @@ const Register = () => {
                 </Form.Group>
               </Col>
             </Row>
-            <Button type="submit">Signup</Button>
+            <Button type="submit" >Signup</Button>
           </Form>
         </Container>
       </Container>

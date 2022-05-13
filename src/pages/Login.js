@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Form, Button, Alert, Col, Row } from "react-bootstrap";
 import { useMutation } from "react-query";
 import { login } from "../services/user";
@@ -8,34 +8,34 @@ import { useNavigate } from "react-router-dom";
 import NavB from "../components/Navbar";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-
+import * as Yup from "yup";
 
 const Login = () => {
   const navigate = useNavigate();
-  const emailInputRef = useRef();
-  const passwordInputRef = useRef();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const schema = yup
-  .object({
-    email: yup.string().required(),
-    password: yup.string().required('No password provided.').min(8, 'Password is too short - should be 8 chars minimum.').matches(/[a-zA-Z]/, 'Password can only contain Latin letters.')
-  })
+  const formSchema = Yup.object().shape({
+    email: Yup.string(),
+    password: Yup.string(),
+  });
 
   const {
     register,
-    handleSubmit,
     formState: { errors },
+    handleSubmit,
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(formSchema),
   });
 
-  const mutation = useMutation((info) => login(info));
+  const mutation = useMutation((info) => login(info), {
+    onSuccess: () => navigate("/Login"),
+  });
 
   const onSubmitHandler = () => {
     mutation.mutate({
-      Email: emailInputRef.current.value,
-      Password: passwordInputRef.current.value,
+      email: email,
+      password: password,
     });
   };
 
@@ -46,7 +46,7 @@ const Login = () => {
       </div>
       <Container className="p-3">
         <Container className="p-5 mb-4 bg-light rounded-3">
-          <Form onSubmit={onSubmitHandler}>
+          <Form onSubmit={handleSubmit(onSubmitHandler)}>
             <Row>
               <Col>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -54,10 +54,10 @@ const Login = () => {
                   <Form.Control
                     {...register("email")}
                     placeholder="email"
-                    name="email"
                     type="email"
                     required
-                    ref={emailInputRef}
+                    name="email"
+                    onChange={(event) => setEmail(event.target.value)}
                   />
                   <Form.Text className="text-muted">
                     {errors.email?.message}
@@ -70,10 +70,12 @@ const Login = () => {
                   <Form.Control
                     {...register("password")}
                     placeholder="password"
-                    name="password"
                     type="password"
                     required
-                    ref={passwordInputRef}
+                    minLength={8}
+                    maxLength={20}
+                    name="password"
+                    onChange={(event) => setPassword(event.target.value)}
                   />
                   <Form.Text className="text-muted">
                     {errors.password?.message}

@@ -12,14 +12,12 @@ import * as Yup from "yup";
 
 const Register = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('')
-  const [password, setPassword]= useState('')
-  
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const formSchema = Yup.object().shape({
     email: Yup.string(),
     password: Yup.string(),
-      
   });
 
   const {
@@ -27,10 +25,12 @@ const Register = () => {
     formState: { errors },
     handleSubmit,
   } = useForm({
-    resolver: yupResolver(formSchema)
+    resolver: yupResolver(formSchema),
   });
 
-  const mutation = useMutation((info) => signup(info), {onSuccess: () => navigate("/Login")});
+  const mutation = useMutation((info) => signup(info), {
+    onSuccess: () => navigate("/Login"),
+  });
 
   const onSubmitHandler = () => {
     mutation.mutate({
@@ -38,9 +38,6 @@ const Register = () => {
       password: password,
     });
   };
-
-  const onSubmit = data => console.log(data);
-
 
   return (
     <Fragment>
@@ -59,7 +56,7 @@ const Register = () => {
                     placeholder="email"
                     type="email"
                     required
-                    name='email'
+                    name="email"
                     onChange={(event) => setEmail(event.target.value)}
                   />
                   <Form.Text className="text-muted">
@@ -86,7 +83,7 @@ const Register = () => {
                 </Form.Group>
               </Col>
             </Row>
-            <Button type="submit" >Signup</Button>
+            <Button type="submit">Signup</Button>
           </Form>
         </Container>
       </Container>

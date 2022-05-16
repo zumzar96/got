@@ -1,6 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import { authSlice } from './userSlice'
+import { userSlice } from './userSlice'
 
 export const rootReducer = combineReducers({
-  user: authSlice.reducer
+  user: userSlice.reducer,
 });

@@ -9,11 +9,17 @@ import NavB from "../components/Navbar";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
+import { userActions } from '../store/userSlice';
+import { useDispatch } from 'react-redux';
+
 
 const Login = () => {
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
 
   const formSchema = Yup.object().shape({
     email: Yup.string(),
@@ -29,14 +35,17 @@ const Login = () => {
   });
 
   const mutation = useMutation((info) => login(info), {
-    onSuccess: () => navigate("/Login"),
+    //onSuccess : () => {
+    //dispatch(userActions.login('blabla'))}
+    
   });
 
   const onSubmitHandler = () => {
     mutation.mutate({
       email: email,
       password: password,
-    });
+    },
+    );
   };
 
   return (

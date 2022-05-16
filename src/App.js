@@ -7,24 +7,39 @@ import Houses from "./pages/Houses";
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import { useSelector } from "react-redux";
 
 
 import "./App.css";
 
 function App() {
   const queryClient = new QueryClient();
+  const Loggedin = useSelector((state) => state.user.isLogedin)
+
 
 
   return (
     <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <Routes>
+
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/register" element={<Register/>}/>
+
+        {
+        Loggedin ?
+            [ 
+                // add as many as you'd like here
+                <Route path={"/loggedinpage"} element={ <Homepage/> }/>
+            ]
+            :
+            null
+    }
+
         <Route exact path="/" element={<Homepage/>} />
         <Route path="/books" element={<Books/>}/>
         <Route path="/characters" element={<Characters/>}/>
         <Route path="/houses" element={<Houses/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/register" element={<Register/>}/>
 
 
       </Routes>

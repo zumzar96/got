@@ -5,8 +5,11 @@ const initialState = {
     isLogedin: false,
   };
   
+const token = localStorage.getItem('auth_token');
   
-  
+if (token) {
+  initialState.isLogedin = true
+}
   
 export const userSlice = createSlice({
     name: 'login',

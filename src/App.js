@@ -28,19 +28,19 @@ function App() {
 
         {
         Loggedin ?
-            [ 
-                // add as many as you'd like here
-                <Route path={"/loggedinpage"} element={ <Homepage/> }/>
+            [ <Fragment>
+                <Route exact path="/" element={<Homepage/>} />
+                <Route path="/books" element={<Books/>}/>
+                <Route path="/characters" element={<Characters/>}/>
+                <Route path="/houses" element={<Houses/>}/>
+              </Fragment>
+
             ]
             :
             null
     }
 
-        <Route exact path="/" element={<Homepage/>} />
-        <Route path="/books" element={<Books/>}/>
-        <Route path="/characters" element={<Characters/>}/>
-        <Route path="/houses" element={<Houses/>}/>
-
+        
 
       </Routes>
     </BrowserRouter>

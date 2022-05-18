@@ -25,6 +25,15 @@ export const userSlice = createSlice({
   
         return state;
       },
+      logout: (state, action) => {
+          state = {
+            token:localStorage.removeItem('auth_token'),
+            isLogedin : false,
+            };
+        
+  
+        return state;
+      },
     },
   });
 

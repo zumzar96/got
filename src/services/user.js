@@ -29,5 +29,7 @@ export const login = async (data) => {
 
 
   
-  } catch (err) {}
+  } catch (error) {
+    
+  }
 };

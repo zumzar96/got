@@ -22,9 +22,18 @@ function App() {
     <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <Routes>
+        {
+        !Loggedin ?
+            [ <Fragment>
+              <Route path="/login" element={<Login/>}/>
+              <Route path="/register" element={<Register/>}/>
+              </Fragment>
 
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/register" element={<Register/>}/>
+            ]
+            :
+            null
+
+          }
 
         {
         Loggedin ?

@@ -13,12 +13,12 @@ import { userActions } from "../store/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
-  const Loggedin = useSelector((state) => state.user.isLogedin)
+  const Loggedin = useSelector((state) => state.user.isLogedin);
 
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState();
+  const [error, setError] = useState("");
 
   const formSchema = Yup.object().shape({
     email: Yup.string(),
@@ -35,12 +35,10 @@ const Login = () => {
 
   const mutation = useMutation((info) => login(info), {
     onSuccess: () => {
-      if (!Loggedin){
-       setError('Neuspesna prijava!')}
-      else {
-         navigate("/");} 
+      if (!Loggedin) {
+        navigate("/login");
+      }
     },
-    
   });
 
   const onSubmitHandler = () => {
@@ -99,9 +97,9 @@ const Login = () => {
               {error}
             </Alert>
             <Alert key={"light"} variant={"light"}>
-              If u dont have an account 
+              If u dont have an account
             </Alert>
-            <Button type="submit" onClick={() => navigate("/Register")}>
+            <Button type="submit" onClick={() => navigate("/register")}>
               Sign up
             </Button>
           </Form>

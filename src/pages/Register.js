@@ -29,7 +29,7 @@ const Register = () => {
   });
 
   const mutation = useMutation((info) => signup(info), {
-    onSuccess: () => navigate("/Login"),
+    onSuccess: () => navigate("/login"),
   });
 
   const onSubmitHandler = () => {

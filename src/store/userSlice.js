@@ -2,27 +2,41 @@ import axios from 'axios';
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    token: null,
     isLogedin: false,
   };
   
-  const token = localStorage.getItem('auth_token');
+const token = localStorage.getItem('auth_token');
   
+if (token) {
+  initialState.isLogedin = true
+}
   
-  
-  export const authSlice = createSlice({
-    name: 'auth',
+export const userSlice = createSlice({
+    name: 'login',
     initialState: initialState,
     reducers: {
-      auth: (state, action) => {
-        if (!action.payload) {
+      login: (state, action) => {
+        if (action.payload) {
           state = {
-            token: null,
-          };
-          localStorage.removeItem('auth_token');
+            token:localStorage.setItem('auth_token', JSON.stringify(action.payload)),
+            isLogedin : true,
+            };
         } 
+  
+        return state;
+      },
+      logout: (state, action) => {
+          state = {
+            token:localStorage.removeItem('auth_token'),
+            isLogedin : false,
+            };
+        
   
         return state;
       },
     },
   });
+
+export const userActions = userSlice.actions;
+
+export default userSlice;

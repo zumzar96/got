@@ -1,5 +1,4 @@
 import React from 'react';
-import { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { getCharacter } from '../services/characters';
 import CharacterContainer from './CharacterContainer'

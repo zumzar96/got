@@ -1,0 +1,110 @@
+[33mcommit b49d789d8b4e25b7aea8941bd5c2f853d5deb219[m[33m ([m[1;36mHEAD -> [m[1;32mstyling[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 3d7cd21 330b0c0
+Author: Ismail Sarenkapic <ismailgim96@gmail.com>
+Date:   Thu May 19 13:32:32 2022 +0200
+
+    Merge pull request #1 from zumzar96/Aut
+    
+    Aut
+
+[33mcommit 330b0c048a6d38b0efef48f02c1b54f96b1ffb20[m[33m ([m[1;31morigin/Aut[m[33m, [m[1;32mAut[m[33m)[m
+Author: ismail <ismailgim96@gmail.com>
+Date:   Thu May 19 13:28:31 2022 +0200
+
+    Authentication finished
+
+[33mcommit 17ce1133de16e8e84efe3cabfa4d03b68a2730ff[m
+Author: ismail <ismailgim96@gmail.com>
+Date:   Wed May 18 14:44:38 2022 +0200
+
+    Adding error messages and logout feature
+
+[33mcommit 563b9d78fd1702aee0759f7f855dac7413a3e823[m
+Author: ismail <ismailgim96@gmail.com>
+Date:   Tue May 17 11:44:48 2022 +0200
+
+    Restricting user routes
+
+[33mcommit fca10a008aa62f58b7e5f3787cc81ba74b04fd40[m
+Author: ismail <ismailgim96@gmail.com>
+Date:   Mon May 16 16:41:07 2022 +0200
+
+    Adding token to authentication
+
+[33mcommit 25c97292a8127284ec2f4314f62e865b76e24b90[m
+Author: ismail <ismailgim96@gmail.com>
+Date:   Fri May 13 11:02:02 2022 +0200
+
+    Login with yup and React Form Hook finished
+
+[33mcommit 1d09795b5c25a10e09e26353fbc39a82d91079af[m
+Author: ismail <ismailgim96@gmail.com>
+Date:   Thu May 12 15:43:27 2022 +0200
+
+    Signup feature with yup and react form hook finished
+
+[33mcommit 229fd5db77b3328d217bddb24dda55984286d006[m
+Author: ismail <ismailgim96@gmail.com>
+Date:   Wed May 11 15:31:16 2022 +0200
+
+    Adding new validation features with React Hook Form
+
+[33mcommit 327d7546cc8f285c382d2406351b32f40b5914ce[m
+Author: ismail <ismailgim96@gmail.com>
+Date:   Tue May 10 13:12:31 2022 +0200
+
+    Adding validation to authentication
+
+[33mcommit 55ef5351b06b40b4a7711e50374e42d20f467e45[m
+Author: ismail <ismailgim96@gmail.com>
+Date:   Thu May 5 14:36:32 2022 +0200
+
+    authentication styling
+
+[33mcommit b18652713ee209f9d91ce3e4b3cb2b884e675a2a[m
+Author: ismail <ismailgim96@gmail.com>
+Date:   Wed May 4 18:31:59 2022 +0200
+
+    small bug fix
+
+[33mcommit ceb934309423e2f68c902ad2fc0df24da948e6e1[m[33m ([m[1;31morigin/＜new-branch＞[m[33m, [m[1;32m＜new-branch＞[m[33m)[m
+Author: ismail <ismailgim96@gmail.com>
+Date:   Wed May 4 17:42:55 2022 +0200
+
+    Adding navbar
+
+[33mcommit 3d7cd213fd705b2794f5e882b9a6aa8c6db29418[m
+Author: ismail <ismailgim96@gmail.com>
+Date:   Fri Apr 29 14:01:16 2022 +0200
+
+    Sign in and sing up added
+
+[33mcommit b7408b4afd47131a0cbc27ed031c519b2e4f3056[m
+Author: ismail <ismailgim96@gmail.com>
+Date:   Thu Apr 28 16:04:57 2022 +0200
+
+    Authentication signup
+
+[33mcommit 3a619ee73985357c1aae1919cdebf06f2111d4b3[m
+Author: ismail <ismailgim96@gmail.com>
+Date:   Tue Apr 26 14:24:44 2022 +0200
+
+    adding data fetching and login form
+
+[33mcommit 15878f225677ffa978cc549a758ecc15904aa329[m
+Author: ismail <ismailgim96@gmail.com>
+Date:   Fri Apr 22 15:53:28 2022 +0200
+
+    Fething data and routes
+
+[33mcommit bbdb8631e571ca55d6343e62d44ecea42798de81[m
+Author: ismail <ismailgim96@gmail.com>
+Date:   Mon Apr 18 17:52:42 2022 +0200
+
+    intial commit
+
+[33mcommit 299326be905c70c7c7ed1093a5856555f9d25b59[m
+Author: ismail <ismailgim96@gmail.com>
+Date:   Sat Mar 19 17:50:40 2022 +0100
+
+    Initial commit from Create React App

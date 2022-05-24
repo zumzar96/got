@@ -11,6 +11,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { userActions } from "../store/userSlice";
 import { useDispatch, useSelector } from "react-redux";
+import './LoginWrapper.scss'
+import AuthWrapper from "./LoginWrapper"
 
 const Login = () => {
   const Loggedin = useSelector((state) => state.user.isLogedin);
@@ -53,7 +55,7 @@ const Login = () => {
       <div>
         <NavB></NavB>
       </div>
-      <Container className="p-3">
+      <AuthWrapper className="authWrapper">
         <Container className="p-5 mb-4 bg-light rounded-3">
           <Form onSubmit={handleSubmit(onSubmitHandler)}>
             <Row>
@@ -104,7 +106,7 @@ const Login = () => {
             </Button>
           </Form>
         </Container>
-      </Container>
+      </AuthWrapper>
     </Fragment>
   );
 };

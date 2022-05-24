@@ -9,7 +9,7 @@ import Register from "./pages/Register";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import { useSelector } from "react-redux";
 
-import "./App.css";
+import "./styles/index.scss";
 
 function App() {
   const queryClient = new QueryClient();
@@ -40,6 +40,7 @@ function App() {
             : null}
 
           <Route path={"login"} element={<Navigate replace to={"/"} />} />
+          <Route path={"/"} element={<Navigate replace to={"login"} />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

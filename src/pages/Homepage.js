@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, Fragment } from "react";
 import { useNavigate } from "react-router-dom";
-import { Accordion, Button, Alert, Nav } from "react-bootstrap";
+import { Accordion, Button, Alert, Nav, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useQuery } from "react-query";
 import NavB from "../components/Navbar"
@@ -20,7 +20,20 @@ function Homepage(props) {
 
   return (<Fragment>
     <NavB/>
-    <Button onClick={logOutHandler}>Logout</Button>
+    
+
+    <Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src="holder.js/100px180" />
+  <Card.Body>
+    <Card.Title>Card Title</Card.Title>
+    <Card.Text>
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </Card.Text>
+    <Button onClick={logOutHandler} variant="primary">Logout</Button>
+  </Card.Body>
+</Card>
+    
     </Fragment>
     
   );

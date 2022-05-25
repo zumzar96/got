@@ -1,12 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
 
+
 $ubuntu-font: "Ubuntu", sans-serif;
 
-$bg: rgb(255, 255, 255);
-$bg2: rgb(0, 0, 0);
+  
+
+
+$bg: rgb(23, 27, 116);
+$bg2: rgb(233, 233, 233);
 $text: rgb(15, 15, 15);
-$text2: rgb(240, 240, 240);
-$primary: rgb(22, 210, 247);
+$text2: rgb(24, 23, 23);
+$primary: rgb(205, 201, 201);
+$light: rgb(233, 233, 233);
+$dark: rgb(220, 247, 244);
+
 
 $spacing-sm: 8px;
 $spacing-md: 16px;

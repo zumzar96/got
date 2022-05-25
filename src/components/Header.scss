@@ -4,10 +4,12 @@
     height: $header-height;
     background: $bg2;
     color: $text2;
-    position: fixed;
+    position: to-upper-case;
     z-index: 1000;
     width: 100%;
     box-shadow: 0 1px 5px $primary;
+
+
 
     &__content {
         max-width: 1920px;

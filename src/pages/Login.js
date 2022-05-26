@@ -5,7 +5,6 @@ import { login } from "../services/user";
 import { useRef } from "react";
 import { Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import NavB from "../components/Navbar";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
@@ -50,9 +49,6 @@ const Login = () => {
 
   return (
     <Fragment>
-      <div>
-        <NavB></NavB>
-      </div>
       <Container className="p-3">
         <Container className="p-5 mb-4 bg-light rounded-3">
           <Form onSubmit={handleSubmit(onSubmitHandler)}>

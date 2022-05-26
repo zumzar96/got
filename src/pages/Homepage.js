@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { Accordion, Button, Alert, Nav, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useQuery } from "react-query";
-import NavB from "../components/Navbar"
 import { store } from '../store'
 import { userActions } from '../store/userSlice';
 
@@ -19,7 +18,6 @@ function Homepage(props) {
   };
 
   return (<Fragment>
-    <NavB/>
     
 
     <Card style={{ width: '18rem' }}>

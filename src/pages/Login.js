@@ -20,8 +20,8 @@ const Login = () => {
   const [error, setError] = useState("");
 
   const formSchema = Yup.object().shape({
-    email: Yup.string(),
-    password: Yup.string(),
+    email: Yup.string().required(),
+    password: Yup.string().required(),
   });
 
   const {

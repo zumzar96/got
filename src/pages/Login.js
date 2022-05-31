@@ -5,7 +5,6 @@ import { login } from "../services/user";
 import { useRef } from "react";
 import { Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import NavB from "../components/Navbar";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
@@ -21,8 +20,8 @@ const Login = () => {
   const [error, setError] = useState("");
 
   const formSchema = Yup.object().shape({
-    email: Yup.string(),
-    password: Yup.string(),
+    email: Yup.string().required(),
+    password: Yup.string().required(),
   });
 
   const {
@@ -50,9 +49,6 @@ const Login = () => {
 
   return (
     <Fragment>
-      <div>
-        <NavB></NavB>
-      </div>
       <Container className="p-3">
         <Container className="p-5 mb-4 bg-light rounded-3">
           <Form onSubmit={handleSubmit(onSubmitHandler)}>
@@ -93,9 +89,6 @@ const Login = () => {
               </Col>
             </Row>
             <Button type="submit">Login</Button>
-            <Alert key={"light"} variant={"light"}>
-              {error}
-            </Alert>
             <Alert key={"light"} variant={"light"}>
               If u dont have an account
             </Alert>

@@ -3,11 +3,13 @@ import { userActions } from "../store/userSlice";
 import { userSlice } from "../store/userSlice";
 import { useDispatch } from "react-redux";
 import { store } from "../store";
+import  "../firebase"
+import { firebaseAuth } from "../firebase";
 
 export const signup = (data) =>
   axios
     .post(
-      "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCBwQWEjvdmXwjGKJXaq9ITbJGrkSUy-bc",
+      firebaseAuth.signup,
       data
     )
     .then((res) => res.data);
@@ -15,7 +17,7 @@ export const signup = (data) =>
 export const login = async (data) => {
   try {
     const response = await axios.post(
-      "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCBwQWEjvdmXwjGKJXaq9ITbJGrkSUy-bc",
+      firebaseAuth.signin,
       data
     );
     console.log(response.data.idToken);

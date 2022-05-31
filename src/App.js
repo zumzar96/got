@@ -2,8 +2,8 @@ import React, { useState, useEffect, useCallback, Fragment } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Books from "./pages/Books";
-import Characters from "./pages/Characters";
-import Houses from "./pages/Houses";
+import Characters from "./pages/Laptops";
+import Houses from "./pages/Tablets";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NavB from "./components/Navbar"

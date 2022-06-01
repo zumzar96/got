@@ -9,7 +9,7 @@ function Laptops(props) {
   const [products] = useProduct(Laptops);
 
   return (
-    <div>
+    <div className="wrapper">
       {products.map((prod) => (
         <LaptopsContainer
           key={prod.id}

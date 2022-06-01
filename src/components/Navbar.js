@@ -28,8 +28,8 @@ const NavB = () => {
             <a className="nav__item" href={"/"}>
               home
             </a>
-            <a className="nav__item" href={"/books"}>
-              books
+            <a className="nav__item" href={"/products"}>
+              products
             </a>
 
             {Loggedin ? (<Button onClick={logOutHandler}>

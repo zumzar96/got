@@ -2,14 +2,15 @@ import React, { useState, useEffect, useCallback, Fragment } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Books from "./pages/Books";
-import Characters from "./pages/Laptops";
 import Houses from "./pages/Tablets";
 import Login from "./pages/Login";
+import Products from "./pages/Products";
 import Register from "./pages/Register";
 import NavB from "./components/Navbar"
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import { useSelector } from "react-redux";
 import "./styles/index.scss";
+import Laptops from "./pages/Laptops";
 
 function App() {
   const queryClient = new QueryClient();
@@ -34,8 +35,8 @@ function App() {
                 <Fragment>
                   <Route exact path="/" element={<Homepage />} />
                   <Route path="/books" element={<Books />} />
-                  <Route path="/characters" element={<Characters />} />
-                  <Route path="/houses" element={<Houses />} />
+                  <Route path="/products" element={<Products />} />
+                  <Route path="/laptops" element={<Laptops />} />
                 </Fragment>,
               ]
             : null}

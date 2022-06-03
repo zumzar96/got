@@ -10,18 +10,16 @@ function Products(props) {
   const [products] = useProduct(Products);
 
   return (
-    <Container>
-      <Row xl>
+    <div className="wrapper">
       {products.map((prod) => (
-        <Col><ProductsContainer
+        <ProductsContainer
           key={prod.id}
           id={prod.id}
           pricee={prod.cena}
           imagee={prod.image}
-        /></Col>
+        />
       ))}
-      </Row>
-    </Container>
+    </div>
   );
 }
 

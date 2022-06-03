@@ -11,9 +11,9 @@ function Tablets(props) {
 
   return (
     <Container>
-      <Row md={4}>
+      <Row>
         {products.map((prod) => (
-          <Col xs={6}>
+          <Col>
             <TabletsContainer
               key={prod.id}
               id={prod.id}

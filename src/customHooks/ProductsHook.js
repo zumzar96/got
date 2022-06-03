@@ -15,7 +15,7 @@ const useProduct = (productData) => {
     }
 
     setProducs(loadedProducts);
-  });
+  },[productData]);
   return [products];
 };
 

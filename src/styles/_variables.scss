@@ -3,22 +3,29 @@
 
 $ubuntu-font: "Ubuntu", sans-serif;
 
-
-$spacer: 0.3rem;
-$spacers: (
-  0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
 );
+
+$border-width:                1px !default;
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px
+) !default;
+
+
 
 $grid-columns:                12;
 $grid-gutter-width:           0.1rem;
 $grid-row-columns:            6;
 
-$gutters: $spacers ;
 
 $container-padding-x: $grid-gutter-width * .5;
 

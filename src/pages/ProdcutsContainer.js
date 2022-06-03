@@ -11,17 +11,17 @@ import {
 
 const ProdcutsContainer = (props) => {
   return (
-    <Stack direction="horizontal">
+    <Stack direction="horizontal" gap={0}>
       <div className="bg-light border">
-        <Card style={{ width: "18rem" }}>
+        <Card>
           <Card.Img variant="top" src={props.imagee} />
-          <Card.Body>
+          <Card.Body >
             <Card.Title>Card Title</Card.Title>
             <Card.Text>
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </Card.Text>
-          </Card.Body>
+          </Card.Body >
           <ListGroup className="list-group-flush">
             <ListGroupItem>Cras justo odio</ListGroupItem>
             <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>

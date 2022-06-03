@@ -11,11 +11,11 @@ import {
 
 const TabletsContainer = (props) => {
   return (
-    <Stack direction="horizontal" gap={3}>
+    <Stack direction="horizontal" gap={0}>
       <div className="bg-light border">
         <Card style={{ width: "13rem" }}>
           <Card.Img variant="top" src={props.imagee} />
-          <Card.Body>
+          <Card.Body >
             <Card.Title>Card Title</Card.Title>
             <Card.Text>
               Some quick example text to build on the card title and make up the

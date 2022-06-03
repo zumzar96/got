@@ -11,7 +11,7 @@ import {
 
 const LaptopsContainer = (props) => {
   return (
-    <Stack direction="horizontal" gap={3}>
+    <Stack direction="horizontal" gap={0}>
       <div className="bg-light border">
         <Card style={{ width: "13rem" }}>
           <Card.Img variant="top" src={props.imagee} />

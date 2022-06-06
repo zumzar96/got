@@ -7,6 +7,7 @@ import useProduct from "../customHooks/ProductsHook";
 import { Container, Row, Col } from "react-bootstrap";
 import Laptops from "./Laptops";
 import Tablets from "./Tablets";
+import Offcan from "../components/Offcanvas";
 
 function Products(props) {
   const { data: Products = [] } = useQuery("getProducts", () => getProducts());
@@ -14,10 +15,8 @@ function Products(props) {
 
   return (
     <Fragment>
-      <div className='wrapper'>
-      <Laptops/>
-      <Tablets/>
-      </div>
+      <Laptops />
+      <Tablets />
     </Fragment>
   );
 }

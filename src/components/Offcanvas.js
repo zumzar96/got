@@ -21,7 +21,6 @@ const Offcan = (props) => {
   return (
     <>
       <Nav.Link onClick={handleShow}>Products</Nav.Link>
-
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Offcanvas</Offcanvas.Title>

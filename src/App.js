@@ -20,7 +20,9 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <NavB/>
+      {Loggedin ? (
+            <NavB/>
+          ) : null}
         <Routes>
           {!Loggedin
             ? [

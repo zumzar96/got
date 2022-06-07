@@ -35,27 +35,23 @@ const NavB = (props) => {
             navbarScroll
           >
             <Nav.Link href="homepage">Home</Nav.Link>
-            {Loggedin ? (
-              <Nav.Link onClick={logOutHandler}>Logout</Nav.Link>
-            ) : null}
-
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="laptops">Laptops</NavDropdown.Item>
-              <NavDropdown.Item href="books">Tablets</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="products">Products</NavDropdown.Item>
-            </NavDropdown>
             <Offcan onClick={props.onClick}></Offcan>
+            
+            <Form className="d-flex">
+              <FormControl
+                type="search"
+                placeholder="Search"
+                className="me-2"
+                aria-label="Search"
+              />
+              <Button variant="primary">Search</Button>
+            </Form>
           </Nav>
-          <Form className="d-flex">
-            <FormControl
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+            <NavDropdown title="profile" id="basic-nav-dropdown">
+              <NavDropdown.Item href="">profile</NavDropdown.Item>
+              <NavDropdown.Item onClick={logOutHandler}>Logout</NavDropdown.Item>
+              <NavDropdown.Divider />
+            </NavDropdown>
         </Navbar.Collapse>
       </Container>
     </Navbar>

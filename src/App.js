@@ -35,7 +35,7 @@ function App() {
             ? [
                 <Fragment>
                   <Route exact path="/" element={<Homepage />} />
-                  <Route path="/books" element={<Tablets />} />
+                  <Route path="/tablets" element={<Tablets />} />
                   <Route path="/products" element={<Products />} />
                   <Route path="/laptops" element={<Laptops />} />
                 </Fragment>,

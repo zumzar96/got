@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import {Container, Row, Col, ListGroup, ListGroupItem, Offcanvas, Button} from 'react-bootstrap'
+import {Container, Row, Col, ListGroup, ListGroupItem, Offcanvas, Button, Nav, NavLink} from 'react-bootstrap'
 
 
 const Offcan = (props) => {
@@ -21,8 +21,9 @@ const Offcan = (props) => {
             <Offcanvas.Title>Offcanvas</Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            Some text as placeholder. In real life you can have the elements you
-            have chosen. Like, text, images, lists, etc.
+            Products
+          <Nav.Link href="laptops">Laptops</Nav.Link>
+          <Nav.Link href="tablets">Tablets</Nav.Link>
           </Offcanvas.Body>
         </Offcanvas>
       </>

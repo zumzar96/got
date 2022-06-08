@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import "./styles/index.scss";
 import Laptops from "./pages/Laptops";
 import Tablets from "./pages/Tablets";
+import Product from "./pages/Product";
 
 function App() {
   const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ function App() {
                   <Route exact path="/" element={<Homepage />} />
                   <Route path="/tablets" element={<Tablets />} />
                   <Route path="/products" element={<Products />} />
+                  <Route path="/product" element={<Product />} />
                   <Route path="/laptops" element={<Laptops />} />
                 </Fragment>,
               ]

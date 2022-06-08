@@ -27,6 +27,7 @@ const Offcan = (props) => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           Products
+          <Nav.Link href="products">AllProducts</Nav.Link>
           <Nav.Link href="laptops">Laptops</Nav.Link>
           <Nav.Link href="tablets">Tablets</Nav.Link>
         </Offcanvas.Body>

@@ -5,6 +5,7 @@ import { useQuery } from "react-query";
 import { getProduct } from "../services/products";
 import { Fragment } from "react";
 
+
 const Product = (props) => {
   const { state } = useLocation();
   const { id } = state; // Read values passed on state
@@ -12,7 +13,7 @@ const Product = (props) => {
     getProduct(state.id)
   );
 
-  return <Fragment>{product.cena}</Fragment>;
+  return <Crd style={{width:'40rem'}} src={product.image}></Crd>;
 };
 
 export default Product;

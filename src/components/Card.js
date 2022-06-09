@@ -22,8 +22,8 @@ const Crd = (props) => {
             </Card.Text>
           </Card.Body>
           <Card.Body>
-            <Card.Link href="product">View</Card.Link>
-            <Card.Link onClick={props.onClick}>Another Link</Card.Link>
+            <Card.Link onClick={props.onClick}>View</Card.Link>
+            <Card.Link >Another Link</Card.Link>
           </Card.Body>
         </Card>
       </div>

@@ -4,17 +4,13 @@ import Product from "./Product.js";
 import { useState, Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 const TabletsContainer = (props) => {
-const [id, setId] = useState('')
-const [image, setImage] = useState('')
-const navigate = useNavigate()
-const Onclickhandler = () => {
-  navigate("/product", { state: { id: props.id, src: props.image } })
-}
+  const navigate = useNavigate();
+  const Onclickhandler = () => {
+    navigate("/product", { state: { id: props.id } });
+  };
 
-  return (<Fragment><Crd src={props.imagee} id={props.id} onClick={Onclickhandler}/>
-  </Fragment>);
+  return <Crd src={props.imagee} id={props.id} onClick={Onclickhandler} />;
 };
 
 export default TabletsContainer;

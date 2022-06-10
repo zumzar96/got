@@ -13,7 +13,7 @@ const Crd = (props) => {
   return (
     <Stack direction="horizontal">
       <div className="bg-light border">
-        <Card style={{ width: "13rem" }}>
+        <Card style={props.style}>
           <Card.Img variant="top" src={props.src}/>
           <Card.Body >
             <Card.Title>Card Title</Card.Title>

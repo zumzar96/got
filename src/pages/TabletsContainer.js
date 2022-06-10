@@ -10,7 +10,7 @@ const TabletsContainer = (props) => {
     navigate("/product", { state: { id: props.id } });
   };
 
-  return <Crd src={props.imagee} id={props.id} onClick={Onclickhandler} />;
+  return <Crd style={{width:'13rem'}} src={props.imagee} id={props.id} onClick={Onclickhandler} />;
 };
 
 export default TabletsContainer;

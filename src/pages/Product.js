@@ -13,7 +13,7 @@ const Product = (props) => {
     getProduct(state.id)
   );
 
-  return <Crd style={{width:'40rem'}} src={product.image}></Crd>;
+  return <div><Crd style={{width:'30rem'}} src={product.image}></Crd></div>;
 };
 
 export default Product;

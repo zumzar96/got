@@ -1,30 +1,14 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { getTablets } from "../services/products";
-import TabletsContainer from "./TabletsContainer";
 import useProduct from "../customHooks/ProductsHook";
-import { Container, Row, Col } from "react-bootstrap";
+import Cntainer from "../components/Container";
 
 function Tablets(props) {
-  const { data: Laptops = [] } = useQuery("getTablets", () => getTablets());
-  const [products] = useProduct(Laptops);
+  const { data: Tablets = [] } = useQuery("getTablets", () => getTablets());
+  const [products] = useProduct(Tablets);
 
-  return (
-    <Container>
-      <Row>
-        {products.map((prod) => (
-          <Col>
-            <TabletsContainer
-              key={prod.id}
-              id={prod.id}
-              pricee={prod.cena}
-              imagee={prod.image}
-            />
-          </Col>
-        ))}
-      </Row>
-    </Container>
-  );
+  return <Cntainer products={products} />;
 }
 
 export default Tablets;

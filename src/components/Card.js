@@ -16,9 +16,9 @@ const Crd = (props) => {
         <Card style={props.style}>
           <Card.Img variant="top" src={props.src}/>
           <Card.Body >
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>{props.id}</Card.Title>
             <Card.Text>
-              {props.id}
+              {props.price}
             </Card.Text>
           </Card.Body>
           <Card.Body>

@@ -13,7 +13,7 @@ const Product = (props) => {
     getProduct(state.id)
   );
 
-  return <div><Crd style={{width:'30rem'}} src={product.image}></Crd></div>;
+  return <div><Crd style={{width:'30rem'}} src={product.image} price={product.cena} id={state.id}></Crd></div>;
 };
 
 export default Product;

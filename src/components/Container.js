@@ -2,7 +2,6 @@ import React from "react";
 import { useQuery } from "react-query";
 import { getTablets } from "../services/products";
 import ProductsContainer from "../components/ProdcutsContainer";
-import useProduct from "../customHooks/ProductsHook";
 import { Container, Row, Col } from "react-bootstrap";
 
 function Cntainer(props) {
@@ -15,7 +14,7 @@ function Cntainer(props) {
               <ProductsContainer
                 key={prod.id}
                 id={prod.id}
-                pricee={prod.cena}
+                pricee={prod.price}
                 imagee={prod.image}
               />
             </Col>

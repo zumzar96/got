@@ -10,7 +10,7 @@ const ProductsContainer = (props) => {
     navigate("/product", { state: { id: props.id } });
   };
 
-  return <Crd style={{width:'13rem'}} src={props.imagee} id={props.id} onClick={Onclickhandler} />;
+  return <Crd style={{width:'13rem'}} src={props.imagee} id={props.id} price={props.pricee} onClick={Onclickhandler} />;
 };
 
 export default ProductsContainer;

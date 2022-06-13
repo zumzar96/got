@@ -13,10 +13,16 @@ import {
   Container,
 } from "react-bootstrap";
 import Offcan from "./Offcanvas";
+import SearchProduct from "../pages/SearchProduct";
 
 const NavB = (props) => {
   const Loggedin = useSelector((state) => state.user.isLogedin);
   const navigate = useNavigate();
+  const [searchProd, setSearch] = useState('') 
+  const Onclickhandler = () => {
+    navigate("/searchproduct", { state: { searchedProd: searchProd } });
+  };
+
 
   const logOutHandler = () => {
     store.dispatch(userActions.logout());
@@ -43,8 +49,9 @@ const NavB = (props) => {
                 placeholder="Search"
                 className="me-2"
                 aria-label="Search"
+                onChange={(event) => setSearch(event.target.value)}
               />
-              <Button variant="primary">Search</Button>
+              <Button variant="primary" onClick={Onclickhandler}>Search</Button>
             </Form>
           </Nav>
             <NavDropdown title="profile" id="basic-nav-dropdown">

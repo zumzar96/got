@@ -13,6 +13,7 @@ import "./styles/index.scss";
 import Laptops from "./pages/Laptops";
 import Tablets from "./pages/Tablets";
 import Product from "./pages/Product";
+import SearchProduct from "./pages/SearchProduct";
 
 function App() {
   const queryClient = new QueryClient();
@@ -42,6 +43,7 @@ function App() {
                   <Route path="/products" element={<Products />} />
                   <Route path="/product" element={<Product />} />
                   <Route path="/laptops" element={<Laptops />} />
+                  <Route path="/searchproduct" element={<SearchProduct />} />
                 </Fragment>,
               ]
             : null}

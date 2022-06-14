@@ -5,6 +5,7 @@ import { useQuery } from "react-query";
 import { getProduct } from "../services/products";
 import { Fragment } from "react";
 import { useEffect } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 
 const SearchProduct = (props) => {
   const { state } = useLocation();
@@ -16,14 +17,18 @@ const SearchProduct = (props) => {
     refetch();
   }, [searchedProd]);
   return (
-    <div>
-      <Crd
-        style={{ width: "13rem" }}
-        src={product.image}
-        price={product.cena}
-        id={state.searchedProd}
-      ></Crd>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <Crd
+            style={{ width: "13rem" }}
+            src={product.image}
+            price={product.cena}
+            id={state.searchedProd}
+          ></Crd>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

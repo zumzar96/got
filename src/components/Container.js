@@ -1,6 +1,4 @@
 import React from "react";
-import { useQuery } from "react-query";
-import { getTablets } from "../services/products";
 import ProductsContainer from "../components/ProdcutsContainer";
 import { Container, Row, Col } from "react-bootstrap";
 

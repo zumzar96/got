@@ -1,4 +1,18 @@
+.custom-button{
+    color: white;
+    background-color: green;
+    border-radius: 8px;
+  }
 
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    width: 80%;
+    height: 100vh;
+    grid-auto-flow: dense;
+    float: right;}
 
 /* import bootstrap to set changes */
 @import "~bootstrap/scss/bootstrap";

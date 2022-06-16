@@ -1,7 +1,8 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import { getBook } from '../services/books';
-import  BookContainer from './BookContainer'
+import  BookContainer from './SearchProduct'
+import {Container, Row, Col} from 'react-bootstrap'
 
 
 
@@ -10,8 +11,8 @@ function Books(props) {
 
 
     return (
-     <div>{bookName.map((book) => (
-        <BookContainer book={book} />))}</div>
+     <Container><Row>{bookName.map((book) => (
+        <Col><BookContainer book={book}/></Col>))}</Row></Container>
     );
 };
 

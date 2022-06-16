@@ -3,7 +3,42 @@
 
 $ubuntu-font: "Ubuntu", sans-serif;
 
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
 
+$border-width:                0px;
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px
+);
+
+
+
+$grid-columns:                4;
+$grid-gutter-width:           0.1rem;
+$grid-row-columns:            4;
+
+
+$container-padding-x: $grid-gutter-width * .5;
+
+
+$border-radius:               .5rem;
+$border-radius-sm:            .2rem;
+$border-radius-lg:            .3rem;
+$border-radius-pill:          20rem;
+
+$border-widths: (
+  
+  5: 5px
+);
 
 $bg: rgb(23, 27, 116);
 $bg2: rgb(233, 233, 233);
@@ -11,7 +46,7 @@ $text: rgb(15, 15, 15);
 $text2: rgb(24, 23, 23);
 $primary: rgb(205, 201, 201);
 $light: rgb(233, 233, 233);
-$dark: rgb(220, 247, 244);
+$dark: rgb(239, 250, 248);
 
 
 $spacing-sm: 8px;

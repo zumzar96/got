@@ -13,7 +13,6 @@ import {
   Container,
 } from "react-bootstrap";
 import Offcan from "./Offcanvas";
-import SearchProduct from "../pages/SearchProduct";
 
 const NavB = (props) => {
   const Loggedin = useSelector((state) => state.user.isLogedin);

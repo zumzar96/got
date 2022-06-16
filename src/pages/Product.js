@@ -3,7 +3,6 @@ import Crd from "../components/Card.js";
 import { useLocation } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getProduct } from "../services/products";
-import { Fragment } from "react";
 
 
 const Product = (props) => {

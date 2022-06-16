@@ -1,7 +1,5 @@
 import React from "react";
 import Crd from "./Card.js";
-import Product from "../pages/Product.js";
-import { useState, Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ProductsContainer = (props) => {

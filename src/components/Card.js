@@ -18,7 +18,7 @@ const Crd = (props) => {
           </Card.Body>
           <Card.Body>
             <Card.Link onClick={props.onClick}>View</Card.Link>
-            <Card.Link >Another Link</Card.Link>
+            <Card.Link onClick={props.onClic}>Another Link</Card.Link>
           </Card.Body>
         </Card>
       </div>

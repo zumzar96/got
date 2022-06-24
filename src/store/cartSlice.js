@@ -66,6 +66,12 @@ export const cartSlice = createSlice({
         totalAmount: updatedTotalAmount,
       };
     },
+    clearCart: (state, action) => {
+      return {
+        items: [],
+        totalAmount: 0,
+      };
+    },
   },
 });
 

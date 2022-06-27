@@ -14,7 +14,7 @@ const ProductsContainer = (props) => {
     dispatch(
       cartActions.addtoCart(
         (item = {
-          src: props.imagee,
+          image: props.imagee,
           id: props.id,
           amount: 1,
           price: props.pricee,

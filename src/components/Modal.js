@@ -1,6 +1,7 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import CartProducts from "../pages/CartProducts";
+import Laptops from "../pages/Laptops";
 
 function MydModalWithGrid(props) {
   return (

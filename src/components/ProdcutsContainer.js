@@ -6,17 +6,19 @@ import { useDispatch } from "react-redux";
 
 const ProductsContainer = (props) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const Onclickhandler = () => {
     navigate("/product", { state: { id: props.id } });
   };
   const onClichandler = (item) => {
     dispatch(
-      cartActions.addtoCart( (item = {
-        id: props.id,
-        amount: 1,
-        price: props.pricee,
-      }))
+      cartActions.addtoCart(
+        (item = {
+          id: props.id,
+          amount: 1,
+          price: props.pricee,
+        })
+      )
     );
   };
 

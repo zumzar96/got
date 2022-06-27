@@ -13,7 +13,7 @@ import {
   Container,
 } from "react-bootstrap";
 import Offcan from "./Offcanvas";
-import CardButton from "./CardButton";
+import CartButton from "./CartButton";
 
 const NavB = (props) => {
   const Loggedin = useSelector((state) => state.user.isLogedin);
@@ -54,7 +54,7 @@ const NavB = (props) => {
               <Button variant="primary" onClick={Onclickhandler}>Search</Button>
             </Form>
           </Nav>
-          <CardButton/>
+          <CartButton onClick={props.onClick}/>
 
             <NavDropdown title="profile" id="basic-nav-dropdown">
               <NavDropdown.Item href="">profile</NavDropdown.Item>

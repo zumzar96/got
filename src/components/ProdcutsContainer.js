@@ -29,6 +29,7 @@ const ProductsContainer = (props) => {
       src={props.imagee}
       id={props.id}
       price={props.pricee}
+      amount={props.amount}
       onClick={Onclickhandler}
       onClic={onClichandler}
     />

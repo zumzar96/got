@@ -14,6 +14,7 @@ function Cntainer(props) {
                 id={prod.id}
                 pricee={prod.price}
                 imagee={prod.image}
+                amount={prod.amount}
               />
             </Col>
           ))}

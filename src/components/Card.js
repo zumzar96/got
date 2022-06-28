@@ -15,6 +15,9 @@ const Crd = (props) => {
             <Card.Text>
               {props.price}
             </Card.Text>
+            <Card.Text>
+              {props.amount}
+            </Card.Text>
           </Card.Body>
           <Card.Body>
             <Card.Link onClick={props.onClick}>View</Card.Link>

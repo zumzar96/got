@@ -17,6 +17,7 @@ function MydModalWithGrid(props) {
       </Modal.Body>
       <Modal.Footer>
         Total amount : {totalAmnt}
+        <Button onClick={props.onHide}>Clear cart</Button>
         <Button onClick={props.onHide}>Order</Button>
         <Button onClick={props.onHide}>Close</Button>
       </Modal.Footer>

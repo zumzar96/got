@@ -2,13 +2,27 @@ import React from "react";
 import Crd from "./Card.js";
 import { useNavigate } from "react-router-dom";
 import { cartActions } from "../store/cartSlice.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import MydModalWithGrid from "./Modal.js";
+import { useState, Fragment } from "react";
+import { modalActions } from "../store/modalSlice.js";
 
 const ProductsContainer = (props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const mdl = useSelector((state) => state.modal.modalState);
+
+  const [modalShow, setModalShow] = useState(false);
   const Onclickhandler = () => {
-    navigate("/product", { state: { id: props.id } });
+    dispatch(modalActions.toggleModalnavigate());
+    navigate("/product", {
+      state: {
+        id: props.id,
+        image: props.imagee,
+        amount: 1,
+        price: props.pricee,
+      },
+    });
   };
   const onClichandler = (item) => {
     dispatch(

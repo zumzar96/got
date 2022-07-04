@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
-import CartProducts from "../pages/CartProducts";
+import CartProducts from "../components/CartProducts";
 import { useSelector, useDispatch } from "react-redux/es/exports";
 import { cartActions } from "../store/cartSlice.js";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Badge } from "react-bootstrap";
 import { useSelector } from "react-redux/es/exports";
-import MydModalWithGrid from "./Modal";
+import MydModalWithGrid from "../pages/Cart";
 import { useState, Fragment } from "react";
 import { useDispatch } from "react-redux";
 import { modalActions } from "../store/modalSlice.js";

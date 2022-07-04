@@ -4,7 +4,7 @@ import { Form, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { cartActions } from "../store/cartSlice.js";
 import { useDispatch, useSelector } from "react-redux";
-import MydModalWithGrid from "./Modal.js";
+import MydModalWithGrid from "../pages/Cart.js";
 import { useState, useEffect, Fragment } from "react";
 import { modalActions } from "../store/modalSlice.js";
 

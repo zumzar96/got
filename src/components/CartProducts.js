@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux/es/exports";
-import Cntainer from "../components/Container";
+import Cntainer from "./Container";
 import { Fragment, useEffect, useState } from "react";
 
 const CartProducts = () => {

@@ -43,6 +43,7 @@ function App() {
                   <Route path="/products" element={<Products />} />
                   <Route path="/product" element={<Product />} />
                   <Route path="/laptops" element={<Laptops />} />
+                  <Route path="/laptops" element={<Laptops />} />
                   <Route path="/searchproduct" element={<SearchProduct />} />
                 </Fragment>,
               ]

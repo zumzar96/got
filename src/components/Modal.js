@@ -5,6 +5,7 @@ import { useSelector } from "react-redux/es/exports";
 
 function MydModalWithGrid(props) {
   const totalAmnt = useSelector((state) => state.cart.totalAmount);
+
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
       <Modal.Header closeButton>

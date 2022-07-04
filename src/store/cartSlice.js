@@ -60,16 +60,21 @@ export const cartSlice = createSlice({
         updatedItems = [...state.items];
         updatedItems[existingCartItemIndex] = updatedItem;
       }
-
+      localStorage.setItem("cart", JSON.stringify(updatedItems));
+      localStorage.setItem("totalAmnt", JSON.stringify(updatedTotalAmount));
       return {
         items: updatedItems,
         totalAmount: updatedTotalAmount,
       };
     },
     clearCart: (state, action) => {
+      const updatedItems = [];
+      const updatedTotalAmount = 0;
+      localStorage.setItem("cart", JSON.stringify(updatedItems));
+      localStorage.setItem("totalAmnt", JSON.stringify(updatedTotalAmount));
       return {
-        items: [],
-        totalAmount: 0,
+        items: updatedItems,
+        totalAmount: updatedTotalAmount,
       };
     },
   },

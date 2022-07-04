@@ -33,6 +33,13 @@ const ProductsContainer = (props) => {
       })
     );
   };
+  const onClikhandler = () => {
+    dispatch(
+      cartActions.removefromCart({
+        id: props.id,
+      })
+    );
+  };
 
   return (
     <Fragment>
@@ -44,6 +51,7 @@ const ProductsContainer = (props) => {
         amount={props.amount}
         onClick={Onclickhandler}
         onClic={onClichandler}
+        onClik={onClikhandler}
       />
     </Fragment>
   );

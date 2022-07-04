@@ -10,7 +10,6 @@ function Cntainer(props) {
           {props.products.map((prod) => (
             <Col>
               <ProductsContainer
-                key={prod.id}
                 id={prod.id}
                 pricee={prod.price}
                 imagee={prod.image}

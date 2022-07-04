@@ -1,7 +1,10 @@
 import React from "react";
 import { Form, Card, Stack } from "react-bootstrap";
+import { useSelector } from "react-redux/es/exports";
 
 const Crd = (props) => {
+  const mdl = useSelector((state) => state.modal.modalState);
+
   return (
     <Stack direction="horizontal">
       <div className="bg-light border">
@@ -15,6 +18,9 @@ const Crd = (props) => {
           <Card.Body>
             <Card.Link onClick={props.onClick}>View</Card.Link>
             <Card.Link onClick={props.onClic}>Add to Cart</Card.Link>
+            {mdl ? (
+            <Card.Link onClick={props.onClik}>Remove</Card.Link>
+          ) : null}
           </Card.Body>
         </Card>
       </div>

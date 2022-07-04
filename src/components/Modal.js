@@ -1,10 +1,15 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import CartProducts from "../pages/CartProducts";
-import { useSelector } from "react-redux/es/exports";
+import { useSelector, useDispatch } from "react-redux/es/exports";
+import { cartActions } from "../store/cartSlice.js";
 
 function MydModalWithGrid(props) {
   const totalAmnt = useSelector((state) => state.cart.totalAmount);
+  const dispatch = useDispatch();
+  const clearCartHandler = () => {
+    dispatch(cartActions.clearCart());
+  };
 
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
@@ -18,7 +23,7 @@ function MydModalWithGrid(props) {
       </Modal.Body>
       <Modal.Footer>
         Total amount : {totalAmnt}
-        <Button onClick={props.onHide}>Clear cart</Button>
+        <Button onClick={clearCartHandler}>Clear cart</Button>
         <Button onClick={props.onHide}>Order</Button>
         <Button onClick={props.onHide}>Close</Button>
       </Modal.Footer>

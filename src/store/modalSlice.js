@@ -15,7 +15,7 @@ export const modalSlice = createSlice({
       
     },
     toggleModalnavigate: (state, action) => {
-        if (state.modalState==true){
+        if (state.modalState===true){
         const changed = !state.modalState;
 
         return {modalState:changed}};

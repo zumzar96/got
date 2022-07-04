@@ -17,7 +17,7 @@ const Crd = (props) => {
           </Card.Body>
           <Card.Body>
             <Card.Link onClick={props.onClick}>View</Card.Link>
-            <Card.Link onClick={props.onClic}>Add to Cart</Card.Link>
+            <Card.Link onClick={props.onClic}>Add</Card.Link>
             {mdl ? (
             <Card.Link onClick={props.onClik}>Remove</Card.Link>
           ) : null}

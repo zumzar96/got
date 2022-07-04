@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { store } from "../store";
 import { userActions } from "../store/userSlice";
+import { cartActions } from "../store/cartSlice.js";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import {
@@ -25,6 +26,7 @@ const NavB = (props) => {
 
 
   const logOutHandler = () => {
+    store.dispatch(cartActions.clearCart());
     store.dispatch(userActions.logout());
     navigate("login");
   };

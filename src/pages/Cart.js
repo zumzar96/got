@@ -3,12 +3,16 @@ import { Modal, Button } from "react-bootstrap";
 import CartProducts from "../components/CartProducts";
 import { useSelector, useDispatch } from "react-redux/es/exports";
 import { cartActions } from "../store/cartSlice.js";
-import CartOrderButton from "../components/CartOrderButton";
 import OrderFrm from "../components/OrderForm";
+import { useState } from "react";
 
 function MydModalWithGrid(props) {
   const totalAmnt = useSelector((state) => state.cart.totalAmount);
   const dispatch = useDispatch();
+  const [orderForm, setOrderForm] = useState(false);
+  const formOrderHandler = () => {
+    setOrderForm(!orderForm);
+  };
   const clearCartHandler = () => {
     dispatch(cartActions.clearCart());
   };
@@ -24,12 +28,14 @@ function MydModalWithGrid(props) {
         <CartProducts />
       </Modal.Body>
       <Modal.Footer>
-        <OrderFrm></OrderFrm>
         <Button onClick={clearCartHandler}>Clear cart</Button>
-        <CartOrderButton onClick={props.onClick}></CartOrderButton>
-        <Button onClick={props.onHide}>Close</Button>
+        {!orderForm ? (
+          <Button onClick={formOrderHandler}>Continue</Button>
+        ) : <Button onClick={formOrderHandler}>Close</Button>}
+        
         Total amount : {totalAmnt}
-
+        {orderForm ? <OrderFrm/> : null}
+        <Button onClick={props.onHide}>Close</Button>
       </Modal.Footer>
     </Modal>
   );

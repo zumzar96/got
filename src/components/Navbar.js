@@ -19,11 +19,10 @@ import CartButton from "./CartButton";
 const NavB = (props) => {
   const Loggedin = useSelector((state) => state.user.isLogedin);
   const navigate = useNavigate();
-  const [searchProd, setSearch] = useState('') 
+  const [searchProd, setSearch] = useState("");
   const Onclickhandler = () => {
     navigate("/searchproduct", { state: { searchedProd: searchProd } });
   };
-
 
   const logOutHandler = () => {
     store.dispatch(cartActions.clearCart());
@@ -44,7 +43,7 @@ const NavB = (props) => {
           >
             <Nav.Link href="homepage">Home</Nav.Link>
             <Offcan onClick={props.onClick}></Offcan>
-            
+
             <Form className="d-flex">
               <FormControl
                 type="search"
@@ -53,16 +52,17 @@ const NavB = (props) => {
                 aria-label="Search"
                 onChange={(event) => setSearch(event.target.value)}
               />
-              <Button variant="primary" onClick={Onclickhandler}>Search</Button>
+              <Button variant="primary" onClick={Onclickhandler}>
+                Search
+              </Button>
             </Form>
           </Nav>
-          <CartButton onClick={props.onClick}/>
-
-            <NavDropdown title="profile" id="basic-nav-dropdown">
-              <NavDropdown.Item href="">profile</NavDropdown.Item>
-              <NavDropdown.Item onClick={logOutHandler}>Logout</NavDropdown.Item>
-              <NavDropdown.Divider />
-            </NavDropdown>
+          <CartButton onClick={props.onClick} />
+          <NavDropdown title="profile" id="basic-nav-dropdown">
+            <NavDropdown.Item href="">profile</NavDropdown.Item>
+            <NavDropdown.Item onClick={logOutHandler}>Logout</NavDropdown.Item>
+            <NavDropdown.Divider />
+          </NavDropdown>
         </Navbar.Collapse>
       </Container>
     </Navbar>

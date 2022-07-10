@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { store } from "../store";
 import { userActions } from "../store/userSlice";
+import { cartActions } from "../store/cartSlice.js";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import {
@@ -13,17 +14,18 @@ import {
   Container,
 } from "react-bootstrap";
 import Offcan from "./Offcanvas";
+import CartButton from "./CartButton";
 
 const NavB = (props) => {
   const Loggedin = useSelector((state) => state.user.isLogedin);
   const navigate = useNavigate();
-  const [searchProd, setSearch] = useState('') 
+  const [searchProd, setSearch] = useState("");
   const Onclickhandler = () => {
     navigate("/searchproduct", { state: { searchedProd: searchProd } });
   };
 
-
   const logOutHandler = () => {
+    store.dispatch(cartActions.clearCart());
     store.dispatch(userActions.logout());
     navigate("login");
   };
@@ -41,7 +43,7 @@ const NavB = (props) => {
           >
             <Nav.Link href="homepage">Home</Nav.Link>
             <Offcan onClick={props.onClick}></Offcan>
-            
+
             <Form className="d-flex">
               <FormControl
                 type="search"
@@ -50,14 +52,17 @@ const NavB = (props) => {
                 aria-label="Search"
                 onChange={(event) => setSearch(event.target.value)}
               />
-              <Button variant="primary" onClick={Onclickhandler}>Search</Button>
+              <Button variant="primary" onClick={Onclickhandler}>
+                Search
+              </Button>
             </Form>
           </Nav>
-            <NavDropdown title="profile" id="basic-nav-dropdown">
-              <NavDropdown.Item href="">profile</NavDropdown.Item>
-              <NavDropdown.Item onClick={logOutHandler}>Logout</NavDropdown.Item>
-              <NavDropdown.Divider />
-            </NavDropdown>
+          <CartButton onClick={props.onClick} />
+          <NavDropdown title="profile" id="basic-nav-dropdown">
+            <NavDropdown.Item href="">profile</NavDropdown.Item>
+            <NavDropdown.Item onClick={logOutHandler}>Logout</NavDropdown.Item>
+            <NavDropdown.Divider />
+          </NavDropdown>
         </Navbar.Collapse>
       </Container>
     </Navbar>

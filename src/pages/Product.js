@@ -1,18 +1,15 @@
 import React from "react";
 import Crd from "../components/Card.js";
 import { useLocation } from "react-router-dom";
-import { useQuery } from "react-query";
-import { getProduct } from "../services/products";
+
 
 
 const Product = (props) => {
   const { state } = useLocation();
-  const { id } = state; // Read values passed on state
-  const { data: product = [] } = useQuery("getProduct", () =>
-    getProduct(state.id)
-  );
+  const { id, image, amount, price } = state;
+  
 
-  return <div><Crd style={{width:'30rem'}} src={product.image} price={product.cena} id={state.id}></Crd></div>;
+  return <div><Crd style={{width:'30rem'}} src={state.image} price={state.price} id={state.id}></Crd></div>;
 };
 
 export default Product;
